@@ -247,11 +247,6 @@
           body: new URLSearchParams(new FormData(cform)).toString(),
         }).catch(() => {});
       } catch (_) {}
-      // 2) Also open WhatsApp with the same details for an instant reply.
-      const lines = ["Hello Care32, I'd like to book an appointment.", "Name: " + name, "Phone: " + phone];
-      if (treatment) lines.push("Treatment: " + treatment);
-      if (message) lines.push("Message: " + message);
-      window.open("https://wa.me/918282821409?text=" + encodeURIComponent(lines.join("\n")), "_blank", "noopener");
       cform.reset();
       if (successEl) { successEl.classList.add("show"); successEl.scrollIntoView({ block: "center", behavior: "smooth" }); }
     });

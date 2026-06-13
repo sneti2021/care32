@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.care32.co.in/sitemap.xml
+Sitemap: https://care32.co.in/sitemap.xml
