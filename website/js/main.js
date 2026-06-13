@@ -137,17 +137,22 @@
     const panelText = document.querySelector("[data-smile-text]");
     const panelLink = document.querySelector("[data-smile-link]");
     smile.querySelectorAll(".tooth").forEach((tooth) => {
+      const href = tooth.dataset.href;
       const show = () => {
         smile.querySelectorAll(".tooth.active").forEach((t) => t.classList.remove("active"));
         tooth.classList.add("active");
         panelTitle.textContent = tooth.dataset.title;
         panelText.textContent = tooth.dataset.text;
-        panelLink.href = tooth.dataset.href;
+        panelLink.href = href;
         panelLink.querySelector("span").textContent = "Explore " + tooth.dataset.title.toLowerCase();
       };
+      const go = () => { if (href) window.location.href = href; };
       tooth.addEventListener("mouseenter", show);
-      tooth.addEventListener("click", show);
       tooth.addEventListener("focus", show);
+      tooth.addEventListener("click", go);
+      tooth.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); }
+      });
     });
   }
 
