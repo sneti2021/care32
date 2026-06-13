@@ -221,17 +221,28 @@
     );
     cform.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = cform.name.value.trim();
-      const phone = cform.phone.value.trim();
+      const nameEl = document.getElementById("cf-name");
+      const phoneEl = document.getElementById("cf-phone");
+      const name = nameEl.value.trim();
+      const phone = phoneEl.value.trim();
       const phoneOk = phone.replace(/\D/g, "").length >= 10;
       fieldOf("cf-name").classList.toggle("invalid", !name);
       fieldOf("cf-phone").classList.toggle("invalid", !phoneOk);
       if (!name || !phoneOk) {
-        (!name ? document.getElementById("cf-name") : document.getElementById("cf-phone")).focus();
+        (!name ? nameEl : phoneEl).focus();
         return;
       }
-      const treatment = cform.treatment.value;
-      const message = cform.message.value.trim();
+      const treatment = document.getElementById("cf-treatment").value;
+      const message = document.getElementById("cf-msg").value.trim();
+      // 1) Record the enquiry in Netlify Forms (emails support@care32.co.in). No-op locally.
+      try {
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(new FormData(cform)).toString(),
+        }).catch(() => {});
+      } catch (_) {}
+      // 2) Also open WhatsApp with the same details for an instant reply.
       const lines = ["Hello Care32, I'd like to book an appointment.", "Name: " + name, "Phone: " + phone];
       if (treatment) lines.push("Treatment: " + treatment);
       if (message) lines.push("Message: " + message);
@@ -239,5 +250,48 @@
       cform.reset();
       if (successEl) { successEl.classList.add("show"); successEl.scrollIntoView({ block: "center", behavior: "smooth" }); }
     });
+  }
+
+  /* ---- Cookie consent + GA4 (consent-gated, free, no third-party library) ---- */
+  const GA_ID = "G-XXXXXXXXXX"; // TODO: replace with Care32's real GA4 Measurement ID
+  const loadGA = () => {
+    if (!GA_ID || GA_ID.indexOf("XXXX") !== -1 || window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID, { anonymize_ip: true });
+  };
+  const CONSENT_KEY = "care32-consent";
+  let consent = null;
+  try { consent = localStorage.getItem(CONSENT_KEY); } catch (e) {}
+  if (consent === "granted") {
+    loadGA();
+  } else if (consent !== "denied") {
+    const prefix = location.pathname.indexOf("/treatments/") !== -1 ? "../" : "";
+    const bar = document.createElement("div");
+    bar.className = "cookie-consent";
+    bar.setAttribute("role", "dialog");
+    bar.setAttribute("aria-label", "Cookie consent");
+    bar.innerHTML =
+      '<p>We use cookies to measure site traffic and improve your experience. Read our <a href="' +
+      prefix + 'privacy-policy.html">Privacy Policy</a>.</p>' +
+      '<div class="cc-actions"><button type="button" class="cc-decline">Decline</button>' +
+      '<button type="button" class="cc-accept">Accept</button></div>';
+    const finish = (value) => {
+      try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+      document.body.classList.remove("consent-pending");
+      bar.classList.remove("show");
+      setTimeout(() => bar.remove(), 450);
+    };
+    document.body.appendChild(bar);
+    document.body.classList.add("consent-pending");
+    requestAnimationFrame(() => bar.classList.add("show"));
+    bar.querySelector(".cc-accept").addEventListener("click", () => { finish("granted"); loadGA(); });
+    bar.querySelector(".cc-decline").addEventListener("click", () => finish("denied"));
   }
 })();
