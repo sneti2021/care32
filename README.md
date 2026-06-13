@@ -62,11 +62,16 @@ Push to `main` → Netlify builds and deploys automatically (publish directory `
 - **Setmore** online booking widget + buttons; click-to-call and WhatsApp throughout.
 - Cookie-consent banner gating **Google Analytics 4** (consent-first).
 
+## Analytics
+
+- **Google Analytics 4** (`G-J74BWV9274`) and **Google Tag Manager** (`GTM-PZJP28C`) are installed in the `<head>` of every page, with the GTM `<noscript>` after `<body>`.
+- Loaded via **Google Consent Mode v2**: `analytics_storage` defaults to `denied` and is set to `granted` only when the visitor accepts the cookie banner (the Decline button is therefore real).
+- Note: GA4 is fired both directly (gtag) and is available to GTM. If you also add a GA4 tag for `G-J74BWV9274` inside the GTM container, configure it in only one place to avoid double-counting.
+
 ## Configuration still required
 
-Placeholders / one-time setup outside the code:
+One-time setup outside the code:
 
-- **GA4 Measurement ID** — replace `G-XXXXXXXXXX` in `js/main.js` with the real Care32 GA4 ID.
 - **Netlify Forms notification** — in Netlify → Forms → `contact` → add an email notification to `support@care32.co.in`.
 - **Setmore** — booking URL is `https://care32.setmore.com/`.
 
