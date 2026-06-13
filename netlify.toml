@@ -1,6 +1,12 @@
 # Netlify configuration for Care32
 # Static site: publish the website/ folder as-is (no build step).
 # The _redirects file inside website/ handles the old Wix -> new URL 301s.
+#
+# COST NOTE: every production deploy costs Netlify credits (~15 each, flat),
+# regardless of build time. To conserve the monthly free allowance:
+#   - batch unrelated edits into a single push instead of many small ones;
+#   - add "[skip ci]" to commit messages that do NOT change anything a
+#     visitor sees (README, docs, comments) so Netlify skips the deploy.
 
 [build]
   publish = "website"

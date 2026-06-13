@@ -50,6 +50,8 @@ python3 -m http.server 4173
 
 Push to `main` → Netlify builds and deploys automatically (publish directory `website/`, set in `netlify.toml`). The custom domain `care32.co.in` points to Netlify; old Wix URLs 301-redirect via `website/_redirects`.
 
+**Saving Netlify credits:** every production deploy costs a flat ~15 credits (independent of build time, since there's no build step). To stay within the free allowance, **batch edits into a single push** rather than many small ones, and add **`[skip ci]`** to commit messages that don't change anything a visitor sees (README, docs, comments) so Netlify skips the deploy.
+
 **Cache-busting:** CSS/JS are linked with a `?v=NN` query (e.g. `styles.css?v=37`). When you edit `css/styles.css` or `js/main.js`, bump that number across the HTML files so browsers fetch the new file.
 
 ## Features
