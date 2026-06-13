@@ -333,9 +333,10 @@ body.menu-open .menu-meta { opacity: 1; }
 .smile-wrap { border-radius: var(--r-xl); background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow-card); }
 .smile-core { border-radius: var(--r-xl); background: var(--white); padding: 3rem 2.5rem; display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; }
 .smile-svg { width: 100%; height: auto; }
-.smile-svg > path { fill: var(--bg-tint); opacity: 1; }
-.smile-svg .tooth { fill: var(--bg-soft); stroke: var(--line-strong); stroke-width: 1; cursor: pointer; transition: fill 0.2s var(--ease), stroke 0.2s var(--ease), transform 0.2s var(--ease); transform-origin: center; transform-box: fill-box; }
-.smile-svg .tooth:hover, .smile-svg .tooth.active { fill: var(--blue); stroke: var(--blue-deep); transform: scale(1.06); }
+.smile-svg .gum { fill: var(--bg-tint); }
+.smile-svg .tooth { fill: #fff; stroke: var(--line-strong); stroke-width: 1.25; cursor: pointer; transition: fill 0.25s var(--ease), stroke 0.25s var(--ease), transform 0.3s var(--ease), filter 0.3s var(--ease); transform-box: fill-box; transform-origin: center bottom; }
+.smile-svg .tooth:hover, .smile-svg .tooth.active { fill: var(--blue); stroke: var(--blue-deep); transform: translateY(-4px) scale(1.03); filter: drop-shadow(0 6px 10px rgba(26,99,224,0.22)); }
+.smile-svg .tooth:focus-visible { outline: none; fill: var(--bg-tint); stroke: var(--blue); }
 .smile-panel h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
 .smile-panel p { color: var(--slate); font-size: 0.93rem; margin-bottom: 1.4rem; }
 .smile-panel .smile-link { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; font-size: 0.88rem; color: var(--blue); text-decoration: none; }
