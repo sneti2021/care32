@@ -1,0 +1,14 @@
+# Netlify configuration for Care32
+# Static site: publish the website/ folder as-is (no build step).
+# The _redirects file inside website/ handles the old Wix -> new URL 301s.
+
+[build]
+  publish = "website"
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"

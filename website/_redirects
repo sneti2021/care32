@@ -1,0 +1,10 @@
+# Care32 - 301 redirects from old Wix URLs to new pages (Netlify)
+# Preserves SEO equity from the previous site. Keep this file at the publish root.
+
+/general-5                        /about.html                                  301
+/copy-of-root-canal-treatment     /treatments/root-canal-treatment.html        301
+/copy-of-root-canal-treatment-1   /treatments/root-canal-treatment.html        301
+/copy-of-gum-surgeries            /treatments/gum-disease-treatment.html        301
+/copy-of-pediatric-dentistry      /treatments/kids-dentistry.html               301
+/copy-of-clear-aligners           /treatments/braces-and-clear-aligners.html    301
+/copy-of-dentures                 /treatments/dentures.html                     301
