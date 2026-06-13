@@ -257,25 +257,15 @@
     });
   }
 
-  /* ---- Cookie consent + GA4 (consent-gated, free, no third-party library) ---- */
-  const GA_ID = "G-XXXXXXXXXX"; // TODO: replace with Care32's real GA4 Measurement ID
-  const loadGA = () => {
-    if (!GA_ID || GA_ID.indexOf("XXXX") !== -1 || window.__gaLoaded) return;
-    window.__gaLoaded = true;
-    const s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
-    window.gtag("js", new Date());
-    window.gtag("config", GA_ID, { anonymize_ip: true });
-  };
+  /* ---- Cookie consent -> Google Consent Mode v2 (GA4 + GTM load in <head>) ---- */
   const CONSENT_KEY = "care32-consent";
+  const grantConsent = () => {
+    if (window.gtag) window.gtag("consent", "update", { analytics_storage: "granted" });
+  };
   let consent = null;
   try { consent = localStorage.getItem(CONSENT_KEY); } catch (e) {}
   if (consent === "granted") {
-    loadGA();
+    grantConsent();
   } else if (consent !== "denied") {
     const prefix = location.pathname.indexOf("/treatments/") !== -1 ? "../" : "";
     const bar = document.createElement("div");
@@ -296,7 +286,7 @@
     document.body.appendChild(bar);
     document.body.classList.add("consent-pending");
     requestAnimationFrame(() => bar.classList.add("show"));
-    bar.querySelector(".cc-accept").addEventListener("click", () => { finish("granted"); loadGA(); });
+    bar.querySelector(".cc-accept").addEventListener("click", () => { finish("granted"); grantConsent(); });
     bar.querySelector(".cc-decline").addEventListener("click", () => finish("denied"));
   }
 })();
