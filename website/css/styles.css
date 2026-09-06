@@ -687,3 +687,42 @@ body { background-color: var(--bg); background-image: radial-gradient(rgba(11,27
 .nav-wrap:has(.nav.scrolled) { box-shadow: 0 1px 0 rgba(11,27,51,0.06); }
 .bento-card.dark:hover .bento-core { border-color: var(--char-2); }
 .bento-card:hover .bento-core, .doctor-card:hover .doctor-core, .quote-card:hover { box-shadow: var(--shadow-lift); }
+
+/* ============================================================
+   v4.1 - Find us / map block (homepage + contact directions)
+   ============================================================ */
+.map-split { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; align-items: stretch; }
+.map-frame { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); background: var(--bg-soft); min-height: 430px; }
+.map-frame iframe { width: 100%; height: 100%; min-height: 430px; border: 0; display: block; }
+.map-info { border-radius: var(--r-lg); background: var(--white); border: 1px solid var(--line); padding: 1.9rem 1.7rem; display: flex; flex-direction: column; }
+.map-info h3 { font-size: 1.1rem; margin-bottom: 1.1rem; }
+.map-rows { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; gap: 1.05rem; }
+.map-rows li { display: flex; gap: 0.75rem; font-size: 0.88rem; color: var(--slate); line-height: 1.55; }
+.map-rows .ico { width: 18px; height: 18px; flex: none; margin-top: 0.15rem; color: var(--blue); }
+.map-rows strong { display: block; color: var(--ink); font-weight: 600; margin-bottom: 0.15rem; }
+.map-rows a { color: var(--ink); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.map-rows a:hover { color: var(--blue); border-color: currentColor; }
+.map-areas { font-size: 0.8rem; color: var(--slate-soft); line-height: 1.6; margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.map-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.35rem; }
+.map-actions .btn { flex: 1 1 auto; justify-content: space-between; }
+.hrs-second { display: block; color: var(--slate-soft); }
+@media (max-width: 900px) { .map-split { grid-template-columns: 1fr; } .map-frame, .map-frame iframe { min-height: 320px; } }
+
+/* ---- v4.1 Expanded doctor profiles ---- */
+.doctor-photo { width: 100%; aspect-ratio: 4 / 3; border-radius: var(--r-md); overflow: hidden; margin-bottom: 1.35rem; background: var(--bg-tint); }
+.doctor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.doc-block { margin-top: 1.5rem; padding-top: 1.35rem; border-top: 1px solid var(--line); }
+.doc-block h4 { font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--slate-soft); font-weight: 600; margin-bottom: 0.85rem; }
+.doc-specs { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.doc-specs li { position: relative; padding-left: 1.4rem; font-size: 0.86rem; color: var(--slate); line-height: 1.5; }
+.doc-specs li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+.doc-stats { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.doc-stats > div { flex: 1 1 30%; min-width: 96px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--r-md); padding: 0.85rem 0.8rem; }
+.doc-stats strong { display: block; font-size: 1.02rem; color: var(--ink); line-height: 1.2; }
+.doc-stats span { display: block; font-size: 0.7rem; color: var(--slate-soft); margin-top: 0.25rem; line-height: 1.35; }
+.doc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.1rem; }
+.doc-tags span { font-size: 0.72rem; color: var(--slate); background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--r-pill); padding: 0.32rem 0.7rem; }
+.doc-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.15rem; font-size: 0.82rem; font-weight: 600; color: var(--blue); text-decoration: none; }
+.doc-link svg { width: 13px; height: 13px; }
+.doc-link:hover { color: var(--blue-deep); }
+@media (max-width: 560px) { .doc-stats > div { flex: 1 1 100%; } }
