@@ -733,3 +733,8 @@ body { background-color: var(--bg); background-image: radial-gradient(rgba(11,27
 @media (max-width: 560px) { .nav-logo img { height: 30px; } .footer .nav-logo img { width: 165px; } }
 .doctor-avatar.has-photo { background: var(--bg-tint); padding: 0; overflow: hidden; width: 4.6rem; height: 4.6rem; }
 .doctor-avatar.has-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; }
+
+/* ---- v4.3 Gallery: real clinic photos are landscape (3:2), so 2-up not 4-up ---- */
+.gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+.gallery-item { aspect-ratio: 3 / 2; }
+@media (max-width: 880px) { .gallery-grid { grid-template-columns: 1fr; } }
