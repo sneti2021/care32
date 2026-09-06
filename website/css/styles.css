@@ -709,7 +709,7 @@ body { background-color: var(--bg); background-image: radial-gradient(rgba(11,27
 @media (max-width: 900px) { .map-split { grid-template-columns: 1fr; } .map-frame, .map-frame iframe { min-height: 320px; } }
 
 /* ---- v4.1 Expanded doctor profiles ---- */
-.doctor-photo { width: 100%; aspect-ratio: 4 / 3; border-radius: var(--r-md); overflow: hidden; margin-bottom: 1.35rem; background: var(--bg-tint); }
+.doctor-photo { width: 100%; aspect-ratio: 1 / 1; border-radius: var(--r-md); overflow: hidden; margin-bottom: 1.35rem; background: var(--bg-tint); }
 .doctor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .doc-block { margin-top: 1.5rem; padding-top: 1.35rem; border-top: 1px solid var(--line); }
 .doc-block h4 { font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--slate-soft); font-weight: 600; margin-bottom: 0.85rem; }
@@ -726,3 +726,10 @@ body { background-color: var(--bg); background-image: radial-gradient(rgba(11,27
 .doc-link svg { width: 13px; height: 13px; }
 .doc-link:hover { color: var(--blue-deep); }
 @media (max-width: 560px) { .doc-stats > div { flex: 1 1 100%; } }
+
+/* ---- v4.2 Brand logo (replaces the text wordmark) ---- */
+.nav-logo img { display: block; height: 38px; width: auto; }
+.footer .nav-logo img { height: auto; width: 190px; }
+@media (max-width: 560px) { .nav-logo img { height: 30px; } .footer .nav-logo img { width: 165px; } }
+.doctor-avatar.has-photo { background: var(--bg-tint); padding: 0; overflow: hidden; width: 4.6rem; height: 4.6rem; }
+.doctor-avatar.has-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; }

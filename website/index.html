@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=40">
+  <link rel="stylesheet" href="css/styles.css?v=41">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,7 +74,13 @@
           "@type": "AggregateRating",
           "ratingValue": "5.0",
           "reviewCount": "18"
-        }
+        },
+        "review": [
+          { "@type": "Review", "author": { "@type": "Person", "name": "Satya M" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "I had an excellent experience at care32 dental clinic. The entire team was professional, friendly, and welcoming. The dentist took the time to explain every step of the treatment, answered all my questions patiently, and made sure I was comfortable throughout the procedure. The clinic was exceptionally clean, modern, and well-equipped. The treatment was painless, efficient, and the results exceeded my expectations." },
+          { "@type": "Review", "author": { "@type": "Person", "name": "teja balijapalli" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "During our first visit to the clinic, we received exceptional attention to detail and care. The team carefully understood the issues my wife was facing, provided clear recommendations, and explained the potential complications of delaying treatment. My entire family and extended family became Dr. Samatha's patients. She is very approachable and has a wonderful way of explaining things to patients comfortably without complicating them." },
+          { "@type": "Review", "author": { "@type": "Person", "name": "Anil Kumar" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "From the very first consultation, Dr Sandeep Nalla provided immense reassurance. Their calm demeanour and attentive follow-up care made me feel truly valued." },
+          { "@type": "Review", "author": { "@type": "Person", "name": "Ajay Goyal" }, "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "I had an excellent experience with Care 32 clinic. The clinic is very clean, well-organized, and equipped with modern technology. The staff is also very friendly and supportive. I truly appreciate the care and attention I received and would highly recommend to anyone looking for a skilled and caring dentist." }
+        ]
       },
       {
         "@type": "WebSite",
@@ -124,7 +130,7 @@
   <!-- NAV -->
   <header class="nav-wrap">
     <nav class="nav" aria-label="Primary">
-      <a class="nav-logo" href="index.html">care<span>32</span></a>
+      <a class="nav-logo" href="index.html" aria-label="Care32 Super Speciality Dental Clinic home"><img src="assets/img/logo-care32.png?v=1" alt="Care32 Super Speciality Dental Clinic" width="660" height="160" fetchpriority="high"></a>
       <div class="nav-links">
         <a href="index.html" aria-current="page">Home</a>
         <div class="nav-dd">
@@ -402,8 +408,8 @@
         <div class="doctor-grid" data-reveal-group>
           <div class="doctor-card" data-reveal>
             <div class="doctor-core" data-spot>
-              <div class="doctor-avatar">Dr</div>
-              <h3>Dr. Sandeep</h3>
+              <div class="doctor-avatar has-photo"><img src="assets/img/dr-sandeep.jpg?v=1" width="800" height="1000" alt="Dr. Sandeep Nalla, MDS, endodontist at Care32" loading="lazy"></div>
+              <h3>Dr. Sandeep Nalla</h3>
               <p class="doctor-role">MDS · Endodontics &amp; Restorative Dentistry · 20+ years</p>
               <p>Known for meticulous, painless root canal and restorative work, Dr. Sandeep combines two decades of clinical expertise with rotary endodontics, digital imaging and magnification. He also takes on re-treatment of failed root canals - the cases other clinics pass on.</p>
               <p class="doc-tags"><span>Single-visit RCT</span><span>Re-treatment</span><span>Crowns &amp; bridges</span></p>
@@ -412,8 +418,8 @@
           </div>
           <div class="doctor-card" data-reveal>
             <div class="doctor-core" data-spot>
-              <div class="doctor-avatar">Dr</div>
-              <h3>Dr. Samatha</h3>
+              <div class="doctor-avatar has-photo"><img src="assets/img/dr-samatha.jpg?v=1" width="800" height="1000" alt="Dr. Samatha Goparaju, BDS, cosmetic and family dentist at Care32" loading="lazy"></div>
+              <h3>Dr. Samatha Goparaju</h3>
               <p class="doctor-role">BDS · Cosmetic &amp; Family Dentistry · 20 years</p>
               <p>Dr. Samatha handles cosmetic and family dentistry - smile design, veneers, whitening and everyday care for all ages. She also has a real gift for putting anxious patients, especially children, completely at ease.</p>
               <p class="doc-tags"><span>Smile design</span><span>Veneers</span><span>Kids &amp; nervous patients</span></p>
@@ -436,29 +442,29 @@
           <article class="quote-card">
             <div class="quote-core">
               <div class="quote-stars" aria-label="5 star rating">★★★★★</div>
-              <blockquote>"After putting off my root canal for months due to fear, I finally visited Care32. The procedure was quick, painless, and eliminated the constant toothache I'd been suffering with."</blockquote>
-              <div class="quote-foot"><span class="quote-avatar" aria-hidden="true">M</span><cite>Micheal <span>Root canal patient</span></cite></div>
+              <blockquote>"The dentist took the time to explain every step of the treatment, answered all my questions patiently, and made sure I was comfortable throughout the procedure... The treatment was painless, efficient, and the results exceeded my expectations."</blockquote>
+              <div class="quote-foot"><span class="quote-avatar" aria-hidden="true">S</span><cite>Satya M <span>Google review</span></cite></div>
             </div>
           </article>
           <article class="quote-card">
             <div class="quote-core">
               <div class="quote-stars" aria-label="5 star rating">★★★★★</div>
-              <blockquote>"I was terrified when told I needed a root canal, but the team at Care32 made it completely painless. The endodontist explained everything clearly. My tooth feels perfect now!"</blockquote>
-              <div class="quote-foot"><span class="quote-avatar" aria-hidden="true">S</span><cite>Saritha <span>Root canal patient</span></cite></div>
+              <blockquote>"The team carefully understood the issues my wife was facing, provided clear recommendations, and explained the potential complications of delaying treatment... She is very approachable and has a wonderful way of explaining things to patients comfortably without complicating them."</blockquote>
+              <div class="quote-foot"><span class="quote-avatar" aria-hidden="true">T</span><cite>teja balijapalli <span>Google review</span></cite></div>
             </div>
           </article>
           <article class="quote-card">
             <div class="quote-core">
               <div class="quote-stars" aria-label="5 star rating">★★★★★</div>
-              <blockquote>"They showed me 3D images of my tooth, explained exactly what needed to be done, and completed my root canal in a single visit. Six months later, it's functioning perfectly."</blockquote>
-              <div class="quote-foot"><span class="quote-avatar" aria-hidden="true">R</span><cite>Raghava Rao <span>Single-visit RCT</span></cite></div>
+              <blockquote>"From the very first consultation, Dr Sandeep Nalla provided immense reassurance. Their calm demeanour and attentive follow-up care made me feel truly valued."</blockquote>
+              <div class="quote-foot"><span class="quote-avatar" aria-hidden="true">A</span><cite>Anil Kumar <span>Google review</span></cite></div>
             </div>
           </article>
           <article class="quote-card">
             <div class="quote-core">
               <div class="quote-stars" aria-label="5 star rating">★★★★★</div>
-              <blockquote>"Took my mom as she lost a lot of her teeth. Dr. Samatha and Dr. Sandeep did a meticulous job, patiently. My mom now has new teeth that look 100% natural."</blockquote>
-              <div class="quote-foot"><span class="quote-avatar" aria-hidden="true">V</span><cite>Vin <span>Denture patient's family</span></cite></div>
+              <blockquote>"The clinic is very clean, well-organized, and equipped with modern technology... The staff is also very friendly and supportive. I truly appreciate the care and attention I received and would highly recommend to anyone looking for a skilled and caring dentist."</blockquote>
+              <div class="quote-foot"><span class="quote-avatar" aria-hidden="true">A</span><cite>Ajay Goyal <span>Google review</span></cite></div>
             </div>
           </article>
         </div>
@@ -570,7 +576,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="nav-logo" href="index.html">care<span>32</span></a>
+          <a class="nav-logo" href="index.html" aria-label="Care32 Super Speciality Dental Clinic home"><img src="assets/img/logo-care32-light.png?v=1" alt="Care32 Super Speciality Dental Clinic" width="520" height="126" loading="lazy"></a>
           <p>Care32 Super Speciality Dental Clinic - painless, same-day dental care by senior specialists serving Kukatpally, Moosapet, Greenhills Road, Rainbow Vistas Road, Anjaneya Nagar and Balanagar, Hyderabad.</p>
         </div>
         <div>
@@ -615,7 +621,7 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .8-.2 1.4z"/></svg>
   </a>
 
-  <script src="js/main.js?v=40" defer></script>
+  <script src="js/main.js?v=41" defer></script>
   <!-- Setmore Anywhere "Book Now" widget -->
   <script id="anywhere_book_now_script" src="https://assets.setmore.com/integration/book-now/live/v1/anywhere-book-now.js"></script>
   <button id="Anywhere_button_iframe" class="anywhere-book-now-button" style="background-color: #0B1B33; color: #fff; border: none; padding: 12px 18px; font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer; position: fixed; right: 0; top: 25%; z-index: 80; transform: translate(30%, 0) rotate(-90deg);" data-booking-url="https://care32.setmore.com" data-new-tab="false">Book now</button>
